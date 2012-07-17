@@ -9,8 +9,9 @@ class HomeController {
     def jokeService
 
     def jokes() {
-        def j1 = Joke.get(1)
-        def j2 = Joke.get(7)
+        def randomJokes = jokeService.nextJokes()
+        def j1 = randomJokes[0]
+        def j2 = randomJokes[1]
         
         render view:'jokes', model:[j1:j1, j2:j2]
     }
