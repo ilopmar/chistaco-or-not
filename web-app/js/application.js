@@ -15,7 +15,7 @@ function sendVote(url) {
         url: url,
         dataType: 'json',
         success: function(data) {
-            var timeout = 1500;
+            var timeout = 1000;
             
             setTimeout(function() {
                 window.location.reload();
