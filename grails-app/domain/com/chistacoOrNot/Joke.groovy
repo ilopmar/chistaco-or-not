@@ -3,6 +3,7 @@ package com.chistacoOrNot
 class Joke {
     
     String description
+    Integer points = 0
     
     static constraints = {
     }
@@ -12,4 +13,8 @@ class Joke {
     }
     
     static belongsTo = [author:Author]
+    
+    public String toString() {
+        return description
+    }
 }

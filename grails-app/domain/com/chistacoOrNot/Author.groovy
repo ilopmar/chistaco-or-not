@@ -8,5 +8,8 @@ class Author {
     }
     
     static hasMany = [jokes:Joke]
-    
+
+    public String toString() {
+        return name
+    }    
 }
