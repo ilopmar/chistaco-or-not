@@ -15,8 +15,8 @@ class HomeController {
         render view:'jokes', model:[j1:j1, j2:j2]
     }
     
-    def vote(Long jokeId) {
-        def joke = Joke.get(jokeId)
+    def vote(Long id) {
+        def joke = Joke.get(id)
         if (!joke) {
             return render(text:[success:false] as JSON, contentType:'text/json')
         }
