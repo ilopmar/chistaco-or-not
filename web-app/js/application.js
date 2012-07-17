@@ -1,9 +1,21 @@
-if (typeof jQuery !== 'undefined') {
-	(function($) {
-		$('#spinner').ajaxStart(function() {
-			$(this).fadeIn();
-		}).ajaxStop(function() {
-			$(this).fadeOut();
-		});
-	})(jQuery);
+
+$(".joke1, .joke2").click(function(e) {
+    e.preventDefault();
+    
+    var self = $(this);
+    var url = self.find('p').attr('rel');
+
+    sendVote(url);
+});
+
+function sendVote(url) {
+    
+    $.ajax({
+        type: "POST",
+        url: url,
+        dataType: 'json',
+        success: function(data) {
+            window.location.reload();
+        }
+    });
 }

@@ -1,0 +1,33 @@
+#jokes-wrapper {
+    border: 1px solid green;
+}
+
+.jokes {
+    display: block;
+    overflow: auto;
+    width: 40%;
+    padding: 20px;
+}
+
+.joke1 {
+    border: 1px solid red;
+    float: left;
+}
+.joke1:hover {
+    background-color: red;
+    color: #fff;
+}
+
+.joke2 {
+    border: 1px solid blue;
+    float: right;
+}
+.joke2:hover {
+    background-color: blue;
+    color: #fff;
+}
+
+.text1 {
+    font-size: 18px;
+    padding: 12px;
+}
