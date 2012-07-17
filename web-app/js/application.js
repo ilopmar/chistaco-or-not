@@ -15,7 +15,18 @@ function sendVote(url) {
         url: url,
         dataType: 'json',
         success: function(data) {
-            window.location.reload();
+            var timeout = 1500;
+            
+            setTimeout(function() {
+                window.location.reload();
+            }, timeout);
+            
+            if (data.success) {
+                $.knotify.message("Voto contabilizado correctamente", "Ok", timeout);
+                
+            } else {
+                $.knotify.message("Ocurrió un error con el voto", "Error", timeout);
+            }
         }
     });
 }
