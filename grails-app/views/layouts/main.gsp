@@ -21,7 +21,10 @@
 		<r:layoutResources />
     </head>
 	<body>
-		<div id="grailsLogo" role="banner"><a href="http://grails.org"><img src="${resource(dir: 'images', file: 'grails_logo.png')}" alt="Grails"/></a></div>
+		<div id="logo-wrapper">
+            <r:img class="logo" dir="images" file="logo.png" height="128" width="128" border="0" />
+            <h1>Chistaco or not?</h1>
+        </div>
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo">
             Chistaco or not - Iván López

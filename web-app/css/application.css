@@ -1,3 +1,33 @@
+body {
+    box-shadow: 0 0 0.3em #0f67ab;
+}
+
+h1 {
+    font-size: 60px;
+    color: #fff;
+    float: left;
+    margin-top: 36px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.footer {
+    background: none repeat scroll 0 0 #4389bf;
+    font-size: 14px;
+}
+
+.logo {
+    float: left;
+    margin: 11px 20px 0;
+}
+
+#logo-wrapper {
+    min-height: 150px;
+    background-color: #4389bf;
+}
+
 #jokes-wrapper {
     
 }
@@ -19,13 +49,13 @@
 }
 
 .joke1:hover, .joke2:hover {
-    border-radius: 15px;
-    background-color: #888;
+    border-radius: 10px;
+    background-color: #8594a0;
     color: #fff;
     cursor: pointer;
 }
 
 .text1 {
-    font-size: 18px;
+    font-size: 24px;
     padding: 12px;
 }
