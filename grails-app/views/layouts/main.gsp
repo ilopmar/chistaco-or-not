@@ -28,6 +28,7 @@
 		<g:layoutBody/>
 		<div class="footer" role="contentinfo">
             Chistaco or not - Iván López
+            <p class="text2">2012</p>
         </div>
 		<r:layoutResources />
 	</body>
