@@ -3,6 +3,9 @@ package com.chistacoOrNot
 class Author {
     
     String name
+	String twitter
+	String twitterId
+	String avatar
     
     static constraints = {
     }
