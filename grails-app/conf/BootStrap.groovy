@@ -4,6 +4,7 @@ class BootStrap {
 
     def init = { servletContext ->
         
+        /**
         def a1 = new Author(name:'Pepe', twitter:"pepe", twitterId:"1111111", avatar:"avatar1")
         def a2 = new Author(name:'Juan', twitter:"juan", twitterId:"2222222", avatar:"avatar2")
         def a3 = new Author(name:'Luis', twitter:"luis", twitterId:"3333333", avatar:"avatar3")
@@ -34,6 +35,7 @@ class BootStrap {
         a1.save()
         a2.save()
         a3.save()
+        **/
     }
     def destroy = {
     }
