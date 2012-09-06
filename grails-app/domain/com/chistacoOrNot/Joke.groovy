@@ -1,20 +1,36 @@
 package com.chistacoOrNot
 
 class Joke {
+
+    static belongsTo = [author:Author]
+
+    /**
+     * The internal id of the joke
+     */
+    String jId = UUID.randomUUID().toString().replaceAll('-', '')
     
-    String description
+    /**
+     * The text of the 'chistaco'
+     */
+    String text
+
+    /**
+     * The twitter id of the status
+     */
 	String externalJokeId
+
+    /**
+     * Total points
+     */
     Integer points = 0
     
     static constraints = {
     }
-    
+
     static mapping = {
-        //id generator:'uuid'
-        description type:"text"
+        version false
+        cache true
     }
-    
-    static belongsTo = [author:Author]
     
     public String toString() {
         return description
