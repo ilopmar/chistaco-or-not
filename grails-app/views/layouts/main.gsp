@@ -26,8 +26,8 @@
             <h1>Chistaco or not?</h1>
         </div>
 		<g:layoutBody/>
-		<div class="footer" role="contentinfo">
-            Chistaco or not - Iván López
+		<div class="footer">
+			<span>Chistaco or not - <a href="http://www.twitter.com/ilopmar" target="blank">Iván López (@ilopmar)</a></span>
             <p class="text2">2012</p>
         </div>
 		<r:layoutResources />

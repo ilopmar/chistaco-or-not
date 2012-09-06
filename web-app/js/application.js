@@ -1,10 +1,8 @@
 
 $(".joke1, .joke2").click(function(e) {
     e.preventDefault();
-    
-    var self = $(this);
-    var url = self.find('p').attr('rel');
 
+    var url = $(this).attr('rel');
     sendVote(url);
 });
 

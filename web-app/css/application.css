@@ -11,11 +11,15 @@ h1 {
 
 p {
     font-size: 20px;
+    word-wrap: break-word;
 }
 
 .footer {
     background: none repeat scroll 0 0 #4389bf;
     font-size: 14px;
+}
+.footer a {
+    color: #000;
 }
 
 .logo {
@@ -38,6 +42,10 @@ p {
     width: 45%;
     padding: 20px;
     margin-bottom: 30px;
+}
+.jokes p {
+    float: left;
+    /*margin-top: 10px;*/
 }
 
 .joke1 {
@@ -63,4 +71,21 @@ p {
     float: right;
     font-size: 14px;
     margin-right: 10px;
+}
+
+.avatar {
+    overflow: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+.avatar img {
+    float:left;
+}
+.avatar p {
+    margin-left: 5px;
+    float: left;
+}
+
+.clearfix {
+    clear: both;
 }
