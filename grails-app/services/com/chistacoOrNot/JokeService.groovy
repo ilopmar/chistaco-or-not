@@ -2,22 +2,28 @@ package com.chistacoOrNot
 
 class JokeService {
     
-    static transactional = true
-    
+    static transactional = false
+
+    /**
+     * Return two random jokes
+     *
+     * @return two random jokes
+     */    
     public List<Joke> nextJokes() {
-        def jokeIds = Joke.withCriteria {
-            projections {
-                property('id')
-            }
+        def jokes = Joke.withCriteria {
+            sqlRestriction "1=1 order by random()"
+            maxResults 2
         }
-        
-        def randomList = jokeIds.sort { Math.random() }
-        def joke1 = Joke.get(randomList[0])
-        def joke2 = Joke.get(randomList[1])
-        
-        return [joke1, joke2]
+
+        return jokes
     }
 
+    /**
+     * Add a point to a joke
+     *
+     * @param The joke to vote
+     * @return true when done
+     */
     public Boolean vote(Joke joke) {
         joke.points++
         joke.save()
