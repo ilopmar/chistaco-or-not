@@ -9,7 +9,6 @@ $(".joke1, .joke2").click(function(e) {
 });
 
 function sendVote(url) {
-    
     $.ajax({
         type: "POST",
         url: url,
@@ -22,10 +21,9 @@ function sendVote(url) {
             }, timeout);
             
             if (data.success) {
-                $.knotify.message("Voto contabilizado correctamente", "Ok", timeout);
-                
+                $.knotify.message(data.msg, "Ok", timeout);
             } else {
-                $.knotify.message("Ocurrió un error con el voto", "Error", timeout);
+                $.knotify.message(data.msg, "Error", timeout);
             }
         }
     });
