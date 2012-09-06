@@ -14,11 +14,11 @@
             </p>
     
             <div class="jokes joke1">
-                <p rel="${createLink(mapping:'vote', id:j1.id)}">${j1.description}</p>
+                <p rel="${createLink(mapping:'vote', params:[j1:j1.jId, j2:j2.jId])}">${j1.text}</p>
             </div>
             
             <div class="jokes joke2">
-                <p rel="${createLink(mapping:'vote', id:j2.id)}">${j2.description}</p>
+                <p rel="${createLink(mapping:'vote', params:[j1:j2.jId, j2:j1.jId])}">${j2.text}</p>
             </div>
             
         </div>
