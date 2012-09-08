@@ -56,6 +56,9 @@ grails.project.dependency.resolution = {
         compile ":console:1.2"
         compile ":quartz:1.0-RC2"
 
+        compile ":cloud-foundry:1.2.3"
+        compile ":webxml:1.4.1"
+
         //runtime ":database-migration:1.1"
 
         //compile ':cache:1.0.0'
