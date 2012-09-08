@@ -51,6 +51,7 @@ grails.project.dependency.resolution = {
 
         compile ":spring-security-core:1.2.7.3"
         compile ":console:1.2"
+        compile ":quartz:1.0-RC2"
 
         //runtime ":database-migration:1.1"
 
