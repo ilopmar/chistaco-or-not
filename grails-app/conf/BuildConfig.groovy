@@ -25,6 +25,8 @@ grails.project.dependency.resolution = {
         mavenLocal()
         mavenCentral()
 
+        mavenRepo "http://maven.springframework.org/milestone/"
+
         // uncomment these (or add new ones) to enable remote dependency resolution from public Maven repositories
         //mavenRepo "http://snapshots.repository.codehaus.org"
         //mavenRepo "http://repository.codehaus.org"
@@ -43,9 +45,10 @@ grails.project.dependency.resolution = {
         runtime ":resources:1.1.6"
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
-        //runtime ":zipped-resources:1.0"
-        //runtime ":cached-resources:1.0"
-        //runtime ":yui-minify-resources:0.1.4"
+        runtime ":zipped-resources:1.0"
+        runtime ":cached-resources:1.0"
+        compile ":cache-headers:1.0.4"
+        runtime ":yui-minify-resources:0.1.4"
 
         build ":tomcat:$grailsVersion"
 
