@@ -23,6 +23,16 @@ class Joke {
      * Total points
      */
     Integer points = 0
+
+    /**
+     * Creation date of the joke
+     */
+    Date dateCreated
+
+    /**
+     * Last update
+     */
+    Date lastUpdated
     
     static constraints = {
     }

@@ -21,6 +21,16 @@ class Author {
      * Full path to the twitter avatar
      */
 	String avatar
+
+    /**
+     * Creation date of the joke
+     */
+    Date dateCreated
+
+    /**
+     * Last update
+     */
+    Date lastUpdated
     
     static constraints = {
     }
