@@ -18,6 +18,8 @@ class TwitterService {
 	private void getTweetsFromPage(int page) {
 		def slurper = new JsonSlurper()
 
+		log.info "Getting new tweets from Twitter - start"
+
 		try {
 			def url = "http://search.twitter.com/search.json?q=%23chistaco&rpp=100&page=${page}"
 			def content = new URL(url).getText("UTF-8")
@@ -47,5 +49,7 @@ class TwitterService {
 		} catch (Exception e) {
 			log.error "There was an error with twitter"
 		}
+
+		log.info "Getting new tweets from Twitter - end"
 	}
 }
