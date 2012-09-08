@@ -82,6 +82,7 @@ p {
     float:left;
 }
 .avatar p {
+    width: 360px;
     margin-left: 5px;
     float: left;
 }
