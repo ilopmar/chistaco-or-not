@@ -12,7 +12,7 @@
             <p class="text1">Este es el ranking de los mejores #chistacos</p>
             <ul>
             <g:each in="${ranking}" var="joke">
-                <li class="clearfix">
+                <li>
                     <g:render template="author" model="[author:joke.author]" />
                     <p class="desc">${joke.text}</p>
                     <p class="points">${joke.points}</p>

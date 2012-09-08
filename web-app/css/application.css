@@ -1,12 +1,24 @@
+@font-face {
+    font-family: 'chicken_buttregular';
+    src: url('../fonts/chicken_butt-webfont.eot');
+    src: url('../fonts/chicken_butt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/chicken_butt-webfont.woff') format('woff'),
+         url('../fonts/chicken_butt-webfont.ttf') format('truetype'),
+         url('../fonts/chicken_butt-webfont.svg#chicken_buttregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     box-shadow: 0 0 0.3em #0f67ab;
 }
 
 h1 {
-    font-size: 60px;
+    font-family: 'chicken_buttregular';
+    font-size: 100px;
     color: #fff;
     float: left;
-    margin-top: 36px;
+    margin-top: 12px;
 }
 
 p {
@@ -19,8 +31,13 @@ a {
 }
 
 .footer {
-    background: none repeat scroll 0 0 #4389bf;
     font-size: 14px;
+    background-image: linear-gradient(top, rgb(39,128,196) 0%, rgb(15,103,171) 52%);
+    background-image: -o-linear-gradient(top, rgb(39,128,196) 0%, rgb(15,103,171) 52%);
+    background-image: -moz-linear-gradient(top, rgb(39,128,196) 0%, rgb(15,103,171) 52%);
+    background-image: -webkit-linear-gradient(top, rgb(39,128,196) 0%, rgb(15,103,171) 52%);
+    background-image: -ms-linear-gradient(top, rgb(39,128,196) 0%, rgb(15,103,171) 52%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgb(39,128,196)), color-stop(0.52, rgb(15,103,171)));
 }
 .footer a {
     color: #000;
@@ -35,7 +52,12 @@ a {
 
 #logo-wrapper {
     min-height: 150px;
-    background-color: #4389bf;
+    background-image: linear-gradient(bottom, rgb(39,128,196) 0%, rgb(15,103,171) 52%);
+    background-image: -o-linear-gradient(bottom, rgb(39,128,196) 0%, rgb(15,103,171) 52%);
+    background-image: -moz-linear-gradient(bottom, rgb(39,128,196) 0%, rgb(15,103,171) 52%);
+    background-image: -webkit-linear-gradient(bottom, rgb(39,128,196) 0%, rgb(15,103,171) 52%);
+    background-image: -ms-linear-gradient(bottom, rgb(39,128,196) 0%, rgb(15,103,171) 52%);
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(39,128,196)), color-stop(0.52, rgb(15,103,171)));
 }
 
 #jokes-wrapper {
