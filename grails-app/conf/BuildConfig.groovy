@@ -49,6 +49,9 @@ grails.project.dependency.resolution = {
 
         build ":tomcat:$grailsVersion"
 
+        compile ":spring-security-core:1.2.7.3"
+        compile ":console:1.2"
+
         //runtime ":database-migration:1.1"
 
         //compile ':cache:1.0.0'

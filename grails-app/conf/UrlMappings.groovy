@@ -7,10 +7,10 @@ class UrlMappings {
         
 		"500"(view:'/error')
         
-        // "/$controller/$action?/$id?"{
-        //     constraints {
-        //         // apply constraints here
-        //     }
-        // }
+        "/admin/$controller/$action?/$id?"{
+            constraints {
+                // apply constraints here
+            }
+        }
 	}
 }

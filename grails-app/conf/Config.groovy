@@ -92,3 +92,13 @@ log4j = {
     //debug  'grails.app'
 }
 
+
+// Added by the Spring Security Core plugin:
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.chistacoOrNot.User'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.chistacoOrNot.UserRole'
+grails.plugins.springsecurity.authority.className = 'com.chistacoOrNot.Role'
+grails.plugins.springsecurity.securityConfigType = "Annotation"
+grails.plugins.springsecurity.controllerAnnotations.staticRules = [
+    '/console/**':          ['ROLE_ADMIN'],
+    '/admin/**':          ['ROLE_ADMIN']
+]
