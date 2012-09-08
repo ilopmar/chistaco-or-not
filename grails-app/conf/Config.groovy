@@ -102,3 +102,7 @@ grails.plugins.springsecurity.controllerAnnotations.staticRules = [
     '/console/**':          ['ROLE_ADMIN'],
     '/admin/**':          ['ROLE_ADMIN']
 ]
+
+// DB Console
+grails.dbconsole.enabled = true
+grails.dbconsole.urlRoot = '/admin/dbconsole'
