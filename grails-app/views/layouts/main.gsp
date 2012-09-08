@@ -22,13 +22,15 @@
     </head>
 	<body>
 		<div id="logo-wrapper">
-            <r:img class="logo" dir="images" file="logo.png" height="128" width="128" border="0" />
+            <g:link mapping="home"><r:img class="logo" dir="images" file="logo.png" height="128" width="128" border="0" /></g:link>
             <h1>Chistaco or not?</h1>
         </div>
 		<g:layoutBody/>
 		<div class="footer">
-			<span>Chistaco or not - <a href="http://www.twitter.com/ilopmar" target="blank">Iván López (@ilopmar)</a></span>
-            <p class="text2">2012</p>
+			<span>Chistaco or not by <a href="http://www.twitter.com/ilopmar" target="blank">Iván López (@ilopmar)</a></span>
+            <p class="text2">
+            	<g:link mapping="ranking">Ranking de #chistacos</g:link>
+            </p>
         </div>
 		<r:layoutResources />
 	</body>

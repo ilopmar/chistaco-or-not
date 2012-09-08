@@ -51,4 +51,13 @@ class HomeController {
         return render(text:[success:true, msg:'Voto contabilizado correctamente'] as JSON, contentType:'text/json')
     }
 
+    /**
+     * Ranking of the best jokes
+     */
+    def ranking() {
+        def ranking = jokeService.ranking()
+
+        render view:'ranking', model:[ranking:ranking]
+    }
+
 }

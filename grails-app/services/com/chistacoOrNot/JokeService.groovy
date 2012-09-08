@@ -30,4 +30,19 @@ class JokeService {
         
         return true
     }
+
+    /**
+     * Return the jokes with more points
+     *
+     * @return a list with the jokes with more points
+     */
+    public List<Joke> ranking() {
+        def ranking = Joke.withCriteria {
+
+            order 'points', 'desc'
+
+            maxResults 30
+            cache true
+        }
+    }
 }

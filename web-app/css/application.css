@@ -14,6 +14,10 @@ p {
     word-wrap: break-word;
 }
 
+a {
+    text-decoration: none;
+}
+
 .footer {
     background: none repeat scroll 0 0 #4389bf;
     font-size: 14px;
@@ -21,7 +25,9 @@ p {
 .footer a {
     color: #000;
 }
-
+.footer a:hover {
+    color: #fff;
+}
 .logo {
     float: left;
     margin: 11px 20px 0;
@@ -89,4 +95,30 @@ p {
 
 .clearfix {
     clear: both;
+}
+
+#ranking {
+    margin: 20px;
+}
+#ranking ul {
+    margin: 10px 0 0 10px;
+    list-style-type: none;
+}
+#ranking li {
+    margin-bottom: 30px;
+    float: left;
+    border-bottom: 1px solid #0F67AB;
+}
+#ranking li:last-child {
+    border-bottom: none;
+}
+#ranking .desc {
+    width: 750px;
+    display: block;
+    overflow: hidden;
+    float: left;
+}
+#ranking .points {
+    float: left;
+    margin-left: 50px;
 }
