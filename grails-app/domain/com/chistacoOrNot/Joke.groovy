@@ -30,9 +30,13 @@ class Joke {
     static mapping = {
         version false
         cache true
+
+        // Indexes
+        jId index: 'joke__jId_idx'
+        externalJokeId index: 'joke__externalJokeId_idx'
     }
     
     public String toString() {
-        return description
+        return text
     }
 }

@@ -28,6 +28,9 @@ class Author {
     static mapping = {
         version false
         cache true
+
+        // Indexes
+        twitterId index: 'author__twitterId_idx'
     }
     
     static hasMany = [jokes:Joke]
