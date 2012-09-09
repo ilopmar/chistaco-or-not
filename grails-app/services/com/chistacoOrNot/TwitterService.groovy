@@ -37,9 +37,9 @@ class TwitterService {
 					}
 					
 					// Check if the joke already exists
-					def joke = Joke.findByExternalJokeId(tweet.id)
+					def joke = Joke.findByStatusId(tweet.id)
 					if (!joke) {
-						joke = new Joke(text:tweet.text, externalJokeId:tweet.id)
+						joke = new Joke(text:tweet.text, statusId:tweet.id)
 						author.addToJokes(joke)
 					}
 

@@ -16,8 +16,8 @@ class HomeController {
         def j2 = randomJokes[1]
 
         // Save the jIds in the session to check them when voting
-        session['CHISTACO_J1'] = j1.jId
-        session['CHISTACO_J2'] = j2.jId
+        session['CHISTACO_J1'] = j1.statusId
+        session['CHISTACO_J2'] = j2.statusId
 
         return [j1, j2]
     }
@@ -40,8 +40,8 @@ class HomeController {
     def vote(String j1, String j2) {
 
         // Check that both jokes exists
-        def joke1 = Joke.findByJId(j1)
-        def joke2 = Joke.findByJId(j2)
+        def joke1 = Joke.findByStatusId(j1)
+        def joke2 = Joke.findByStatusId(j2)
 
         if (!joke1 || !joke2) {
             return render(text:[success:false, msg:'Alguno de los chistes no existe'] as JSON, contentType:'text/json')
@@ -50,7 +50,8 @@ class HomeController {
         def sessionJ1 = session['CHISTACO_J1']
         def sessionJ2 = session['CHISTACO_J2']
         // If the jIds are not the same as session do not count the vote
-        if (!((sessionJ1 == joke1.jId && sessionJ2 == joke2.jId) || (sessionJ1 == joke2.jId && sessionJ2 == joke1.jId))) {
+        if (!((sessionJ1 == joke1.statusId && sessionJ2 == joke2.statusId) 
+            || (sessionJ1 == joke2.statusId && sessionJ2 == joke1.statusId))) {
             return render(text:[success:false, msg:'Chistes no válidos'] as JSON, contentType:'text/json')
         }
         

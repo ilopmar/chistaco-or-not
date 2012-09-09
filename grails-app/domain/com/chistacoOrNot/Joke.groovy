@@ -5,19 +5,14 @@ class Joke {
     static belongsTo = [author:Author]
 
     /**
-     * The internal id of the joke
+     * The twitter id of the status
      */
-    String jId = UUID.randomUUID().toString().replaceAll('-', '')
-    
+	String statusId
+
     /**
      * The text of the 'chistaco'
      */
     String text
-
-    /**
-     * The twitter id of the status
-     */
-	String externalJokeId
 
     /**
      * Total points
@@ -42,8 +37,7 @@ class Joke {
         cache true
 
         // Indexes
-        jId index: 'joke__jId_idx'
-        externalJokeId index: 'joke__externalJokeId_idx'
+        statusId index: 'joke__statusId_idx'
     }
     
     public String toString() {
