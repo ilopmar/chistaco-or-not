@@ -8,9 +8,9 @@ class HomeController {
 	def twitterService
 
     /**
-     * Main page. Render two random jokes
+     * Get two random jokes and set their ids in the session
      */
-    def jokes() {
+    private nextJokes() {
         def randomJokes = jokeService.nextJokes()
         def j1 = randomJokes[0]
         def j2 = randomJokes[1]
@@ -19,7 +19,16 @@ class HomeController {
         session['CHISTACO_J1'] = j1.jId
         session['CHISTACO_J2'] = j2.jId
 
-        render view:'jokes', model:[j1:j1, j2:j2]
+        return [j1, j2]
+    }
+
+    /**
+     * Main page. Render two random jokes
+     */
+    def jokes() {
+        def list = this.nextJokes()
+
+        render view:'jokes', model:[j1:list[0], j2:list[1]]
     }
     
     /**
@@ -47,8 +56,12 @@ class HomeController {
         
         // Vote!
         def result = jokeService.vote(joke1)
+
+        // Get new jokes
+        def list = this.nextJokes()
+        def html = g.render template:'jokes', model:[j1:list[0], j2:list[1]]
         
-        return render(text:[success:true, msg:'Voto contabilizado correctamente'] as JSON, contentType:'text/json')
+        return render(text:[success:true, msg:'Voto contabilizado correctamente', html:html] as JSON, contentType:'text/json')
     }
 
     /**
