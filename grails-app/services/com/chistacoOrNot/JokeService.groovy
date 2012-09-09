@@ -39,6 +39,8 @@ class JokeService {
     public List<Joke> ranking() {
         def ranking = Joke.withCriteria {
 
+            gt 'points', 0
+
             order 'points', 'desc'
 
             maxResults 30
