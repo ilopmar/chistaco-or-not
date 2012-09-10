@@ -26,10 +26,14 @@ class TwitterService {
 			def response = slurper.parseText(content)
 
 			response.results.each { tweet ->
-				
-				// Ignore the tweet if contains a RT or a '@'
-				if (!tweet.text.contains("RT") && !tweet.text.contains("@")) {
-					
+				// Ignore the following tweets:
+				//  1.- Length < 30 chars
+				//  2.- Contains a 'RT'
+				//  3.- Tweet is a reply (field in_reply_to_status_id)
+				//  4.- Tweet doesn't contains 'http://'
+				if (tweet.text.length() > 30 && !tweet.text.contains("RT") 
+					&& !tweet.in_reply_to_status_id && !tweet.text.contains("http://")) {
+
 					// Check if the author already exists
 					def author = Author.findByTwitterId(tweet.from_user_id)
 					if (!author) {
@@ -48,6 +52,7 @@ class TwitterService {
 			}
 		} catch (Exception e) {
 			log.error "There was an error with twitter"
+			log.error e.getMessage()
 		}
 
 		log.info "Getting new tweets from Twitter - end"
