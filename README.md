@@ -1,7 +1,7 @@
 Chistaco or not?
 ================
 
-This is a simple app developed with Grails 2.1.0 to vote jokes got from twitter with #chistaco. The application is deployed at [http://chistaco-or-not.cloudfoundry.com](http://chistaco-or-not.cloudfoundry.com)
+This is a simple app developed with Grails 2.1.0 to vote jokes got from twitter with the hashtag **#chistaco**. The application is deployed at [http://chistaco-or-not.cloudfoundry.com](http://chistaco-or-not.cloudfoundry.com)
 
 
 Author
