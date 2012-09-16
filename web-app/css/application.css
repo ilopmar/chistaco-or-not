@@ -61,6 +61,7 @@ a {
 }
 
 #jokes-wrapper {
+    position: relative;
     min-height: 330px;
 }
 
@@ -144,4 +145,16 @@ a {
 #ranking .points {
     float: left;
     margin-left: 50px;
+}
+#refresh {
+    position: absolute;
+    bottom: -8px;
+    background: url(../images/refresh.png) no-repeat transparent;
+    line-height: 24px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+#refresh p {
+    margin-left: 28px;
+    font-size: 14px;
 }

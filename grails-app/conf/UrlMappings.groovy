@@ -19,6 +19,7 @@ class UrlMappings {
         name home: "/" { controller = 'home'; action = [GET:'jokes'] }
         name vote: "/vote" { controller = 'home'; action = [POST:'vote'] }
         name ranking: "/ranking" { controller = 'home'; action = [GET:'ranking'] }
+        name refresh: "/refresh" { controller = 'home'; action = [POST:'refresh'] }
         
 		"500"(view:'/error')
         

@@ -74,4 +74,34 @@ class HomeController {
         render view:'ranking', model:[ranking:ranking]
     }
 
+    /**
+     * Load new jokes
+     *
+     * @param j1 The id of the 1st joke
+     * @param j2 The id of the 2nd joke
+     */
+    def refresh(String j1, String j2) {
+        // Check that both jokes exists
+        def joke1 = Joke.findByStatusId(j1)
+        def joke2 = Joke.findByStatusId(j2)
+
+        if (!joke1 || !joke2) {
+            return render(text:[success:false, msg:'Alguno de los chistes no existe'] as JSON, contentType:'text/json')
+        }
+
+        def sessionJ1 = session['CHISTACO_J1']
+        def sessionJ2 = session['CHISTACO_J2']
+        // If the jIds are not the same as session do not count the vote
+        if (!((sessionJ1 == joke1.statusId && sessionJ2 == joke2.statusId) 
+            || (sessionJ1 == joke2.statusId && sessionJ2 == joke1.statusId))) {
+            return render(text:[success:false, msg:'Chistes no válidos'] as JSON, contentType:'text/json')
+        }
+
+        // Get new jokes
+        def list = this.nextJokes()
+        def html = g.render template:'jokes', model:[j1:list[0], j2:list[1]]
+
+        return render(text:[success:true, html:html] as JSON, contentType:'text/json')
+    }
+
 }

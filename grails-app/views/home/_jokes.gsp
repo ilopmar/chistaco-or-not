@@ -7,3 +7,7 @@
 	    <g:render template="author" model="[author:j2.author]" />
 	    <p class="clearfix"><con:nl2br text="${j2.text}" /></p>
 	</div>
+
+	<div id="refresh" class="clearfix" data-url="${createLink(mapping:'refresh', params:[j1:j1.statusId, j2:j2.statusId])}">
+		<p>Ninguno de los dos</p>
+	</div>
