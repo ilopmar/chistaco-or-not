@@ -32,8 +32,9 @@ class HomeController {
             return render(text:[success:false, msg:'Chistes no válidos'] as JSON, contentType:'text/json')
         }
         
-        // Vote!
-        def result = jokeService.vote(cmd.joke1)
+        // Vote: Best joke +1 and the other joke -1
+        jokeService.vote(cmd.joke1)
+        jokeService.vote(cmd.joke2, -1)
 
         // Get new jokes
         def list = this.nextJokes()
@@ -65,6 +66,10 @@ class HomeController {
         if (!this.checkSessionJokes(cmd.joke1, cmd.joke2)) {
             return render(text:[success:false, msg:'Chistes no válidos'] as JSON, contentType:'text/json')
         }
+
+        // Penalize both jokes
+        jokeService.vote(cmd.joke1, -3)
+        jokeService.vote(cmd.joke2, -3)
 
         // Get new jokes
         def list = this.nextJokes()

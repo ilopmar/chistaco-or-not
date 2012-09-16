@@ -11,6 +11,7 @@ class JokeService {
      */    
     public List<Joke> nextJokes() {
         def jokes = Joke.withCriteria {
+            gt 'points', -10
             sqlRestriction "1=1 order by random()"
             maxResults 2
         }
@@ -21,11 +22,13 @@ class JokeService {
     /**
      * Add a point to a joke
      *
-     * @param The joke to vote
+     * @param joke The joke to vote
+     * @param points The points
+     *
      * @return true when done
      */
-    public Boolean vote(Joke joke) {
-        joke.points++
+    public boolean vote(Joke joke, Integer points = 1) {
+        joke.points += points
         joke.save()
         
         return true
